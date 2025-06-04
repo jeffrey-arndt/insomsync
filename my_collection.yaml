@@ -1,0 +1,40 @@
+type: collection.insomnia.rest/5.0
+name: Luke_Coll
+meta:
+  id: wrk_b9f008988faa40c4be480fe79af31706
+  created: 1749045720128
+  modified: 1749045720128
+collection:
+  - url: http://httpbin.konghq.com/anything
+    name: Luke Request
+    meta:
+      id: req_aec7769a380048759ed268a3f5864b03
+      created: 1749045726883
+      modified: 1749045761705
+      isPrivate: false
+      sortKey: -1749045726883
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_66d029e555ef4d4c46a2caa8fad1fad8530aaddb
+    created: 1749045720143
+    modified: 1749045720143
+environments:
+  name: Base Environment
+  meta:
+    id: env_66d029e555ef4d4c46a2caa8fad1fad8530aaddb
+    created: 1749045720140
+    modified: 1749045720140
+    isPrivate: false
