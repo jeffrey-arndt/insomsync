@@ -4,6 +4,7 @@ meta:
   id: wrk_d1451aa08d9d46bdab98a42f1726e690
   created: 1749049603201
   modified: 1749049603201
+  description: ""
 cookieJar:
   name: Default Jar
   meta:
@@ -70,7 +71,7 @@ spec:
                     required:
                       - now
                       - urls
-      "/when/{human-timestamp}":
+      /when/{human-timestamp}:
         get:
           tags:
             - time
@@ -89,7 +90,7 @@ spec:
               $ref: "#/components/responses/TimestampResponse"
             "500":
               description: oops
-      "/parse/{machine-timestamp}":
+      /parse/{machine-timestamp}:
         get:
           tags:
             - time
@@ -307,7 +308,7 @@ spec:
                           type: string
                     required:
                       - headers
-      "/delay/{n}":
+      /delay/{n}:
         get:
           summary: Delays responding for min(n, 10) seconds.
           parameters:
@@ -322,7 +323,7 @@ spec:
           responses:
             "200":
               description: OK
-      "/basic-auth/{user}/{password}":
+      /basic-auth/{user}/{password}:
         get:
           summary: Challenges HTTPBasic Auth.
           tags:
@@ -341,7 +342,7 @@ spec:
                   schema:
                     type: string
                     example: Basic realm="Fake Realm"
-      "/hidden-basic-auth/{user}/{password}":
+      /hidden-basic-auth/{user}/{password}:
         get:
           summary: Hidden Basic authentication
           tags:
@@ -377,7 +378,7 @@ spec:
                         description: Bearer token specified in the request
             "404":
               description: Unauthorized
-      "/status/{statusCode}":
+      /status/{statusCode}:
         summary: Returns the specified HTTP status code, or a random status code if more
           than one are given
         parameters:
@@ -441,7 +442,7 @@ spec:
           responses:
             "200":
               description: OK
-      "/image/{format}":
+      /image/{format}:
         get:
           summary: Returns an image with the specified format.
           tags:
@@ -478,20 +479,16 @@ spec:
             - in: header
               name: If-Modified-Since
               required: false
-              description: >
-                For testing purposes this header accepts any value. (???) See
-                also
-                https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since
+              description: |
+                For testing purposes this header accepts any value. (???) See also https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since
               schema:
                 type: string
                 example: Wed, 21 Oct 2015 07:28:00 GMT
             - in: header
               name: If-None-Match
               required: false
-              description: >
-                For testing purposes this header accepts any value. (???) See
-                also
-                https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-None-Match
+              description: |
+                For testing purposes this header accepts any value. (???) See also https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-None-Match
               schema:
                 type: string
               examples:
@@ -673,7 +670,8 @@ spec:
             "value1", "param2": "value2", ... }`.
 
 
-            Note that the parameters will be actually sent as `?param1=value1&param2=value2&...`
+            Note that the parameters will be actually sent as
+            `?param1=value1&param2=value2&...`
       responses:
         200BasicAuth:
           description: OK
@@ -691,7 +689,7 @@ spec:
         Image:
           description: OK
           content:
-            "image/png, image/jpeg, image/webp":
+            image/png, image/jpeg, image/webp:
               schema:
                 type: string
                 format: binary
@@ -728,4 +726,4 @@ spec:
   meta:
     id: spc_f2e2991f68c9468d8ccbb886cf7ef50a
     created: 1749049603213
-    modified: 1749049621649
+    modified: 1755789604447

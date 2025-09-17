@@ -4,6 +4,7 @@ meta:
   id: wrk_b9f008988faa40c4be480fe79af31706
   created: 1749045720128
   modified: 1749045720128
+  description: ""
 collection:
   - url: http://httpbin.konghq.com/anything
     name: Luke Request
@@ -12,6 +13,7 @@ collection:
       created: 1749045726883
       modified: 1749045761705
       isPrivate: false
+      description: ""
       sortKey: -1749045726883
     method: GET
     headers:
